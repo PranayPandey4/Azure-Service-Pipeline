@@ -1,0 +1,77 @@
+﻿{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "webAppName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "appInsightsName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "serverName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "databaseName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "adminLogin": {
+      "type": "string",
+      "minLength": 1
+    },
+    "adminLoginPassword": {
+      "type": "securestring"
+    }
+  },
+  "variables": { },
+  "resources": [
+    {
+      "apiVersion": "2016-08-01",
+      "name": "[concat(parameters('webAppName'), '/', 'web')]",
+      "type": "Microsoft.Web/sites/config",
+      "dependsOn": [],
+      "properties": {
+        "phpVersion": "",
+        "use32BitWorkerProcess": false,
+        "webSocketsEnabled": true,
+        "alwaysOn": true,
+        "remoteDebuggingVersion": "VS2017"
+      }
+    },
+    {
+      "apiVersion": "2016-08-01",
+      "name": "[concat(parameters('webAppName'), '/', 'connectionstrings')]",
+      "type": "Microsoft.Web/sites/config",
+      "dependsOn": [],
+      "properties": {
+        "Data:DefaultConnection:ConnectionString": {
+          "value": "[concat('Server=tcp:', reference(concat('Microsoft.Sql/servers/', parameters('serverName')), '2014-04-01').fullyQualifiedDomainName, ',1433;Initial Catalog=', parameters('databaseName'), ';Persist Security Info=False;User Id=', parameters('adminLogin'), ';Password=', parameters('adminLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]",
+          "type": "SQLAzure"
+        }
+      }
+    },
+    {
+      "apiVersion": "2016-08-01",
+      "name": "[concat(parameters('webAppName'), '/', 'appsettings')]",
+      "type": "Microsoft.Web/sites/config",
+      "dependsOn": [],
+      "properties": {
+        "ApplicationInsights:InstrumentationKey": "[reference(concat('Microsoft.Insights/components/', parameters('appInsightsName')), '2015-05-01').InstrumentationKey]"
+      }
+    },
+    {
+      "apiVersion": "2016-08-01",
+      "name": "[concat(parameters('webAppName'), '/', 'slotconfignames')]",
+      "type": "Microsoft.Web/sites/config",
+      "dependsOn": [],
+      "properties": {
+        "appSettingNames": ["ApplicationInsights:InstrumentationKey"],
+        "connectionStringNames": ["Data:DefaultConnection:ConnectionString"]
+      }
+    }
+  ],
+  "outputs": {}
+}

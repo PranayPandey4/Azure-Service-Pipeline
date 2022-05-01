@@ -1,0 +1,20 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+
+/.vs
+*.user
+/packages
+/src/AspNetCoreApplication/bin
+/src/AspNetCoreApplication/obj
+/src/AspNetCoreApplication/bower_components
+/src/AspNetCoreApplication/wwwroot/lib
+/src/AspNetCoreApplication/project.lock.json
+/test/AspNetCoreApplication.UnitTests/bin
+/test/AspNetCoreApplication.UnitTests/obj
+/test/AspNetCoreApplication.UnitTests/TEST-TestResults.xml
+/test/AspNetCoreApplication.UnitTests/project.lock.json
+/test/AspNetCoreApplication.UITests/bin
+/test/AspNetCoreApplication.UITests/obj
+/infra/AspNetCoreApplication.Infrastructure/bin/

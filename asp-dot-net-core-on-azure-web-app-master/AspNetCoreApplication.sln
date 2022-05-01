@@ -1,0 +1,113 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D02777E3-31E1-40C9-B114-485E07E71B84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{5599B0FC-37F4-4E10-9CFD-96611FDF9794}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{311822C6-CC4A-4A78-BE83-C5F462683B75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreApplication", "src\AspNetCoreApplication\AspNetCoreApplication.csproj", "{695403A6-C1ED-4647-B4BC-74133A41B70D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreApplication.UnitTests", "test\AspNetCoreApplication.UnitTests\AspNetCoreApplication.UnitTests.csproj", "{EF0BB060-ADAF-4274-8AA7-DAA634BDBC5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreApplication.UITests", "test\AspNetCoreApplication.UITests\AspNetCoreApplication.UITests.csproj", "{A14D0BCE-E68D-4622-8D8A-20F87E2D04DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{08DD53D4-88C4-4470-BF6C-63FD789A6E48}"
+	ProjectSection(SolutionItems) = preProject
+		docs\AspDotNetCore-AppServiceLinux-CD.md = docs\AspDotNetCore-AppServiceLinux-CD.md
+		docs\AspDotNetCore-AppServiceLinux-CI.md = docs\AspDotNetCore-AppServiceLinux-CI.md
+		docs\AspDotNetCore-AppServiceWindows-CD.md = docs\AspDotNetCore-AppServiceWindows-CD.md
+		docs\AspDotNetCore-AppServiceWindows-CI.md = docs\AspDotNetCore-AppServiceWindows-CI.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imgs", "imgs", "{2E879452-6E6E-4ACF-B786-5C9061029B20}"
+	ProjectSection(SolutionItems) = preProject
+		docs\imgs\AspDotNetCore-AppServiceLinux-CD-Production.PNG = docs\imgs\AspDotNetCore-AppServiceLinux-CD-Production.PNG
+		docs\imgs\AspDotNetCore-AppServiceLinux-CD-Rollback.PNG = docs\imgs\AspDotNetCore-AppServiceLinux-CD-Rollback.PNG
+		docs\imgs\AspDotNetCore-AppServiceLinux-CD-Staging.PNG = docs\imgs\AspDotNetCore-AppServiceLinux-CD-Staging.PNG
+		docs\imgs\AspDotNetCore-AppServiceLinux-CD.PNG = docs\imgs\AspDotNetCore-AppServiceLinux-CD.PNG
+		docs\imgs\AspDotNetCore-AppServiceLinux-CI.PNG = docs\imgs\AspDotNetCore-AppServiceLinux-CI.PNG
+		docs\imgs\AspDotNetCore-AppServiceWindows-CD-Production.PNG = docs\imgs\AspDotNetCore-AppServiceWindows-CD-Production.PNG
+		docs\imgs\AspDotNetCore-AppServiceWindows-CD-Rollback.PNG = docs\imgs\AspDotNetCore-AppServiceWindows-CD-Rollback.PNG
+		docs\imgs\AspDotNetCore-AppServiceWindows-CD-Staging.PNG = docs\imgs\AspDotNetCore-AppServiceWindows-CD-Staging.PNG
+		docs\imgs\AspDotNetCore-AppServiceWindows-CD.PNG = docs\imgs\AspDotNetCore-AppServiceWindows-CD.PNG
+		docs\imgs\AspDotNetCore-AppServiceWindows-CI.PNG = docs\imgs\AspDotNetCore-AppServiceWindows-CI.PNG
+		docs\imgs\Process-Overview-Linux.PNG = docs\imgs\Process-Overview-Linux.PNG
+		docs\imgs\Process-Overview-Windows.PNG = docs\imgs\Process-Overview-Windows.PNG
+		docs\imgs\Visual-Studio-Solution-Structure-Overview.PNG = docs\imgs\Visual-Studio-Solution-Structure-Overview.PNG
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vsts", "vsts", "{CA831602-A9B1-4D3E-92B6-EB318594EE26}"
+	ProjectSection(SolutionItems) = preProject
+		vsts\AspDotNetCore-AppServiceLinux-CD.json = vsts\AspDotNetCore-AppServiceLinux-CD.json
+		vsts\AspDotNetCore-AppServiceLinux-CI.yml = vsts\AspDotNetCore-AppServiceLinux-CI.yml
+		vsts\AspDotNetCore-AppServiceWindows-CD.json = vsts\AspDotNetCore-AppServiceWindows-CD.json
+		vsts\AspDotNetCore-AppServiceWindows-CI.yml = vsts\AspDotNetCore-AppServiceWindows-CI.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{4E6FA04D-993F-4F63-BCE4-80D237192CAF}"
+	ProjectSection(SolutionItems) = preProject
+		infra\scripts\AddResourceGroupLock.ps1 = infra\scripts\AddResourceGroupLock.ps1
+		infra\scripts\CopyAzureSqlDatabase.ps1 = infra\scripts\CopyAzureSqlDatabase.ps1
+		infra\scripts\DeployARMTemplate.ps1 = infra\scripts\DeployARMTemplate.ps1
+		infra\scripts\TestARMTemplate.ps1 = infra\scripts\TestARMTemplate.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{7E6F2235-EBCD-4F78-AFC7-0F032C33CD9A}"
+	ProjectSection(SolutionItems) = preProject
+		infra\templates\ContainerRegistry.json = infra\templates\ContainerRegistry.json
+		infra\templates\deploy-linux-slot.json = infra\templates\deploy-linux-slot.json
+		infra\templates\deploy-linux.json = infra\templates\deploy-linux.json
+		infra\templates\deploy-windows-slot.json = infra\templates\deploy-windows-slot.json
+		infra\templates\deploy-windows.json = infra\templates\deploy-windows.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nested", "nested", "{33DE95DE-DCE8-458F-A620-3340AF2E8A86}"
+	ProjectSection(SolutionItems) = preProject
+		infra\templates\nested\ApplicationInsights.json = infra\templates\nested\ApplicationInsights.json
+		infra\templates\nested\SqlDatabase.json = infra\templates\nested\SqlDatabase.json
+		infra\templates\nested\WebAppLinux.json = infra\templates\nested\WebAppLinux.json
+		infra\templates\nested\WebAppSettings.json = infra\templates\nested\WebAppSettings.json
+		infra\templates\nested\WebAppSlotSettings.json = infra\templates\nested\WebAppSlotSettings.json
+		infra\templates\nested\WebAppSlotWindows.json = infra\templates\nested\WebAppSlotWindows.json
+		infra\templates\nested\WebAppWindows.json = infra\templates\nested\WebAppWindows.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{695403A6-C1ED-4647-B4BC-74133A41B70D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{695403A6-C1ED-4647-B4BC-74133A41B70D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{695403A6-C1ED-4647-B4BC-74133A41B70D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{695403A6-C1ED-4647-B4BC-74133A41B70D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF0BB060-ADAF-4274-8AA7-DAA634BDBC5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF0BB060-ADAF-4274-8AA7-DAA634BDBC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF0BB060-ADAF-4274-8AA7-DAA634BDBC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF0BB060-ADAF-4274-8AA7-DAA634BDBC5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A14D0BCE-E68D-4622-8D8A-20F87E2D04DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A14D0BCE-E68D-4622-8D8A-20F87E2D04DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A14D0BCE-E68D-4622-8D8A-20F87E2D04DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A14D0BCE-E68D-4622-8D8A-20F87E2D04DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{695403A6-C1ED-4647-B4BC-74133A41B70D} = {D02777E3-31E1-40C9-B114-485E07E71B84}
+		{EF0BB060-ADAF-4274-8AA7-DAA634BDBC5E} = {5599B0FC-37F4-4E10-9CFD-96611FDF9794}
+		{A14D0BCE-E68D-4622-8D8A-20F87E2D04DA} = {5599B0FC-37F4-4E10-9CFD-96611FDF9794}
+		{2E879452-6E6E-4ACF-B786-5C9061029B20} = {08DD53D4-88C4-4470-BF6C-63FD789A6E48}
+		{4E6FA04D-993F-4F63-BCE4-80D237192CAF} = {311822C6-CC4A-4A78-BE83-C5F462683B75}
+		{7E6F2235-EBCD-4F78-AFC7-0F032C33CD9A} = {311822C6-CC4A-4A78-BE83-C5F462683B75}
+		{33DE95DE-DCE8-458F-A620-3340AF2E8A86} = {7E6F2235-EBCD-4F78-AFC7-0F032C33CD9A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B740634-CDEC-4E86-B090-6576568FE53A}
+	EndGlobalSection
+EndGlobal
